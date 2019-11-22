@@ -5,8 +5,9 @@ import static com.codeborne.selenide.Selectors.byId;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
 
+@Tag("google")
 @TestInstance(TestInstance.Lifecycle.PER_METHOD)
-public class SomeTests {
+public class GoogleTests {
 
     @BeforeAll
     static void beforeOurTests() {
@@ -22,12 +23,9 @@ public class SomeTests {
     @Test
     @DisplayName("Positive test")
     void positiveTest() {
-        open("http://ya.ru");
+        open("http://google.com");
 
         $("#text").val("lepra").pressEnter();
-        $(byId("text")).val("lepra").pressEnter();
-        $("[id='text']").val("lepra").pressEnter();
-        $x("//*[@id='text']").val("lepra").pressEnter();
 
         $(byText("leprosorium.ru")).should(exist);
     }
@@ -35,10 +33,10 @@ public class SomeTests {
     @Test
     @DisplayName("Positive test")
     void negativeTest() {
-        open("http://ya.ru");
+        open("http://google.com");
 
         $("#text").val("lepra").pressEnter();
 
-        $(byText("leprosorium.ru")).should(exist);
+        $(byText("lepro1sorium.ru")).shouldNot(exist);
     }
 }
