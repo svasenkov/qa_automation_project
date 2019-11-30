@@ -2,7 +2,7 @@ plugins {
     id 'java'
 }
 
-group 'com.stats'
+group 'com.facebook'
 version '1.0'
 
 sourceCompatibility = 1.8
@@ -18,21 +18,8 @@ dependencies {
 }
 
 
-task yandex(type: Test) {
+task facebook(type: Test) {
     useJUnitPlatform {
-        includeTags 'yandex'
-    }
-}
-
-task google(type: Test) {
-    useJUnitPlatform {
-        includeTags 'google'
-    }
-}
-
-task all(type: Test) {
-    useJUnitPlatform {
-        includeTags 'yandex'
-        includeTags 'google'
+        includeTags 'facebook'
     }
 }
