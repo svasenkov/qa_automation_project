@@ -2,8 +2,7 @@ import org.junit.jupiter.api.*;
 
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.by;
-import static com.codeborne.selenide.Selenide.$;
-import static com.codeborne.selenide.Selenide.open;
+import static com.codeborne.selenide.Selenide.*;
 
 @Tag("facebook")
 public class FacebookTests {
@@ -11,8 +10,6 @@ public class FacebookTests {
     @Test
     @DisplayName("Positive test")
     void positiveTest() {
-
-
         open("http://facbook.com");
 
         $(by("data-testid", "royal_email")).setValue("devday2019.test@gmail.com");
